@@ -64,3 +64,57 @@ pip install -r requirements.txt
 twistd cowrie
 
 </details>
+---
+💡 Tip: Verify honeypot is running on port 2222:
+netstat -tulnp | grep 2222 or ss -tulnp | grep 2222
+
+🔍 Attack Simulation
+<div style="background-color:#e3f2fd;padding:10px;border-radius:8px;"> - SSH login attempts were made from a separate attacker machine. - Both **failed and successful logins** were captured. - Commands executed by attackers during sessions were logged for analysis. </div>
+
+Ref 1: Attacker SSH attempt screenshot
+![Attacker SSH attempt](path-to-your-screenshot.png)
+
+📄 Log Analysis
+<div style="background-color:#fce4ec;padding:10px;border-radius:8px;"> - Cowrie logs were stored in **JSON format (`cowrie.json`)**. - Logs were analyzed using `jq` to extract login events, credentials, source IPs, and commands executed. </div> <details> <summary>🔧 Example jq commands</summary>
+# Filter all login events
+jq 'select(.eventid | startswith("cowrie.login"))' cowrie.json
+
+# Filter only successful logins
+jq 'select(.eventid=="cowrie.login.success")' cowrie.json
+
+# Extract source IP addresses
+jq '.[].src_ip' cowrie.json
+
+</details>
+
+Ref 2: Log analysis screenshot
+![Log analysis](path-to-your-screenshot.png)
+
+📊 Results
+<div style="background-color:#fffde7;padding:10px;border-radius:8px;"> - Captured usernames, passwords, source IPs, and commands executed by attackers. - Observed automated brute-force attack patterns. - Timestamped session activity for each attack was recorded. </div>
+
+Ref 3: Example log extract
+
+{
+  "eventid": "cowrie.login.success",
+  "username": "root",
+  "password": "123456",
+  "src_ip": "192.168.56.101",
+  "timestamp": "2026-01-18T12:34:56"
+}
+
+🧠 Observations
+<div style="background-color:#ede7f6;padding:10px;border-radius:8px;"> - SSH services are frequent targets for automated attacks. - Weak or default credentials are commonly exploited. - Honeypot data provides actionable insights for SOC monitoring. - Real-time logging and analysis are critical for defensive operations. </div>
+
+Ref 4: Session activity visualization screenshot
+![Session activity](path-to-your-screenshot.png)
+
+✅ Conclusion
+<div style="background-color:#e0f7fa;padding:10px;border-radius:8px;"> This lab successfully demonstrated: - **Honeypot deployment and monitoring** - **Capture and analysis of attacker behavior** - **Log analysis using command-line tools** - **Foundational SOC skills**, including defensive monitoring and pattern recognition </div>
+
+Next Steps: Forward logs to a SIEM, create dashboards, and map attacks to MITRE ATT&CK for deeper analysis.
+
+🔒 Security Notes
+<div style="background-color:#fbe9e7;padding:10px;border-radius:8px;"> - The honeypot lab was isolated in a virtual machine. - No real credentials or sensitive data were used. - Environment strictly used for educational purposes. </div>
+
+⭐ This project demonstrates hands-on experience in honeypot deployment, attacker monitoring, and SOC-style log analysis.

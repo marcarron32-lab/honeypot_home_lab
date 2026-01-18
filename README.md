@@ -1,9 +1,5 @@
 # 🐝 Cowrie Honeypot Home Lab
 
-<a href="https://linkedin.com/in/YOUR-LINKEDIN-HERE">
-<img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" />
-</a>
-
 ---
 
 <div align="center">
@@ -67,7 +63,7 @@ pip install -r requirements.txt
 
 # Start the honeypot
 twistd cowrie
-</details> <!-- THIS CLOSES THE COLLAPSIBLE BLOCK -->
+</details>
 
 💡 Tip: Verify honeypot is running on port 2222:
 netstat -tulnp | grep 2222 or ss -tulnp | grep 2222

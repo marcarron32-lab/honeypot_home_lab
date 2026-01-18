@@ -124,15 +124,17 @@ This analysis mimics Tier 1 SOC tasks, where analysts triage authentication even
 
 ### Results
 
-The Cowrie honeypot successfully captured and recorded attacker activity, including:
+The Cowrie honeypot successfully captured and recorded attacker activity, providing valuable insight into real-world attack patterns. Key results include:
 
-- Source IP addresses of all incoming SSH connections  
-- Usernames and passwords used during login attempts  
-- Timestamps of each session  
-- Commands executed during active sessions  
-- Patterns of automated brute-force attacks  
+| Data Captured                  | Description                                                                 |
+|--------------------------------|-----------------------------------------------------------------------------|
+| Source IP addresses             | Identifies the origin of SSH attacks                                        |
+| Attempted usernames & passwords | Shows what credentials attackers try (e.g., `root`, `admin`, `user`)       |
+| Session timestamps             | Tracks when attacks occurred                                                |
+| Commands executed               | Captures commands run in the fake filesystem                                |
+| Automated attack patterns       | Reveals brute-force or bot-driven attack behavior                           |
 
-Example log extract from `cowrie.json`:
+**Example log extract from `cowrie.json`:**
 
 ```json
 {

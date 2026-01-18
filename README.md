@@ -72,9 +72,35 @@ twistd cowrie
 💡 Tip: Verify honeypot is running on port 2222: netstat -tulnp | grep 2222 or ss -tulnp | grep 2222
 
 ---
-
 ## 🔍 Attack Simulation
-<div style="background-color:#e3f2fd;padding:10px;border-radius:8px;"> - SSH login attempts were made from a separate attacker machine - Captured **failed and successful logins** - Logged **executed commands** and session activity </div>
 
-Ref 1: Attacker SSH attempt screenshot
-![Attacker SSH attempt](path-to-your-screenshot.png)
+<div style="background-color:#e3f2fd;padding:10px;border-radius:8px;">
+- SSH login attempts were made from a separate attacker machine.  
+- Both **failed and successful logins** were captured.  
+- Commands executed by attackers during sessions were logged for analysis.
+</div>
+
+*Ref 1: Attacker SSH attempt screenshot*  
+`![Attacker SSH attempt](path-to-your-screenshot.png)`
+
+---
+
+## 📄 Log Analysis
+
+<div style="background-color:#fce4ec;padding:10px;border-radius:8px;">
+- Cowrie logs were stored in **JSON format (`cowrie.json`)**.  
+- Logs were analyzed using `jq` to extract login events, credentials, source IPs, and commands executed.
+</div>
+
+<details>
+<summary>🔧 Example jq commands</summary>
+
+```bash
+# Filter all login events
+jq 'select(.eventid | startswith("cowrie.login"))' cowrie.json
+
+# Filter only successful logins
+jq 'select(.eventid=="cowrie.login.success")' cowrie.json
+
+# Extract source IP addresses
+jq '.[].src_ip' cowrie.json

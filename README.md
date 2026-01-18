@@ -62,6 +62,7 @@ pip install -r requirements.txt
 
 # Start the honeypot
 twistd cowrie
+```
 </details>
 ---
 💡 Tip: Verify honeypot is running on port 2222:

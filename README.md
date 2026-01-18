@@ -168,10 +168,6 @@ Through this Cowrie Honeypot lab, several important cybersecurity and SOC skills
 - **Defensive Thinking:** Understanding attacker behavior helps in planning proactive defensive strategies and enhancing security posture.  
 - **Integration Insight:** Recognized the value of forwarding honeypot logs to a SIEM system for correlation, alerting, and further analysis.  
 
-*Ref: Conceptual diagram of attacker behavior and log flow*  
-
-![Lessons Learned Diagram](screenshots/09-lessons-learned.png)
-
 ---
 
 ## ✅ Conclusion

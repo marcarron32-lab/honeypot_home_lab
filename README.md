@@ -120,3 +120,26 @@ jq '.src_ip' cowrie.json
 This analysis mimics Tier 1 SOC tasks, where analysts triage authentication events and identify suspicious behavior.
 
 ---
+## 📊 Results & Observations
+
+### Results
+
+The Cowrie honeypot successfully captured and recorded attacker activity, including:
+
+- Source IP addresses of all incoming SSH connections  
+- Usernames and passwords used during login attempts  
+- Timestamps of each session  
+- Commands executed during active sessions  
+- Patterns of automated brute-force attacks  
+
+Example log extract from `cowrie.json`:
+
+```json
+{
+  "eventid": "cowrie.login.success",
+  "username": "root",
+  "password": "123456",
+  "src_ip": "192.168.56.101",
+  "timestamp": "2026-01-18T12:34:56"
+}
+```

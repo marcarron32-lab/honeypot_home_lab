@@ -145,3 +145,53 @@ The Cowrie honeypot successfully captured and recorded attacker activity, provid
   "timestamp": "2026-01-18T12:34:56"
 }
 ```
+### Observations
+
+From the captured data, the following observations were made:
+- SSH is a frequent target: Attackers routinely scan and attempt connections on SSH ports
+- Weak credentials exploited: Default usernames like root, admin, and user are commonly used
+- Command patterns: Attackers often executed reconnaissance commands (ls, pwd, whoami)
+- Automated attacks detected: Multiple repeated login attempts suggest bot-driven brute-force behavior
+- Value for SOC: Honeypot logs provide actionable intelligence for monitoring, alerting, and incident response
+
+---
+
+## 🧠 Lessons Learned
+
+Through this Cowrie Honeypot lab, several important cybersecurity and SOC skills were reinforced:
+
+- **Honeypot Deployment:** Successfully set up a controlled SSH honeypot environment to attract and monitor attackers.  
+- **Log Management:** Learned how to collect, parse, and analyze JSON-based honeypot logs using command-line tools like `jq`.  
+- **Attack Recognition:** Identified common attack patterns, including brute-force attempts and reconnaissance commands.  
+- **Credential Awareness:** Observed that attackers frequently target weak or default credentials, highlighting the importance of strong authentication.  
+- **SOC Practices:** Gained experience in monitoring, documenting, and interpreting attacker activity, simulating Tier 1 SOC analyst tasks.  
+- **Defensive Thinking:** Understanding attacker behavior helps in planning proactive defensive strategies and enhancing security posture.  
+- **Integration Insight:** Recognized the value of forwarding honeypot logs to a SIEM system for correlation, alerting, and further analysis.  
+
+*Ref: Conceptual diagram of attacker behavior and log flow*  
+
+![Lessons Learned Diagram](screenshots/09-lessons-learned.png)
+
+---
+
+## ✅ Conclusion
+
+The Cowrie Honeypot Home Lab successfully demonstrated the deployment, monitoring, and analysis of a deception-based security control.  
+
+Key takeaways include:
+
+- **Practical SOC Experience:** Simulated real-world attack scenarios and performed tasks similar to a Tier 1 SOC analyst, such as log monitoring and incident observation.  
+- **Understanding Attacker Behavior:** Captured attacker credentials, commands, session activity, and automated attack patterns, providing insight into common intrusion techniques.  
+- **Importance of Logging:** Structured JSON logs enabled efficient analysis, highlighting the critical role of proper logging in cybersecurity operations.  
+- **Foundation for SIEM Integration:** Honeypot logs can be forwarded to SIEM platforms for alerting, correlation, and incident response automation.  
+- **Enhanced Defensive Skills:** Hands-on experience strengthened skills in Linux administration, network monitoring, and threat detection, forming a strong foundation for future cybersecurity projects.  
+
+This lab provides a solid starting point for **advanced security operations**, including **SIEM deployment, automated alerts, and proactive defense strategies**, making it an essential component of a cybersecurity portfolio.
+
+---
+
+⚠️ **Disclaimer:** This repository and all content, including the Cowrie Honeypot setup and attack simulations, are intended **for educational and research purposes only**.  
+Unauthorized access to systems or networks is illegal. Do **not** attempt to deploy this honeypot on networks or systems that you do not own or have explicit permission to use.
+
+---
+

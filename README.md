@@ -53,6 +53,9 @@ Strengthen foundational **SOC skills** including monitoring, logging, and attack
 # Clone Cowrie repository
 git clone https://github.com/cowrie/cowrie.git
 
+# Change directory to the cowrie
+cd cowrie
+
 # Navigate to cowrie folder and create virtual environment
 python3 -m venv cowrie-env
 source cowrie-env/bin/activate
@@ -65,12 +68,12 @@ twistd cowrie
 ```
 </details>
 
----
-
 💡 Tip: Verify honeypot is running on port 2222:
 netstat -tulnp | grep 2222 or ss -tulnp | grep 2222
 
-🔍 Attack Simulation
+---
+
+## 🔍 Attack Simulation
 <div style="background-color:#e3f2fd;padding:10px;border-radius:8px;"> - SSH login attempts were made from a separate attacker machine. - Both **failed and successful logins** were captured. - Commands executed by attackers during sessions were logged for analysis. </div>
 
 Ref 1: Attacker SSH attempt screenshot

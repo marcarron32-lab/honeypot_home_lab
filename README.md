@@ -95,15 +95,15 @@ These actions allowed the honeypot to capture realistic attacker behavior withou
 Cowrie stores all captured activity in structured **JSON logs**, primarily located in:
 cowrie/var/log/cowrie/cowrie.json
 
-The logs were analyzed using `jq` to extract meaningful security events such as login attempts, credentials used, source IP addresses, and executed commands.
-
-### 📄 Example Log Analysis Commands
-<details>
-<summary>💻 Click to expand: Commands to view logs in Cowrie</summary>
 ```bash
 # Change to the directory where logs are stored
 cd cowrie/var/log/cowrie
+```
 
+The logs were analyzed using `jq` to extract meaningful security events such as login attempts, credentials used, source IP addresses, and executed commands.
+
+### 📄 Example Log Analysis Commands
+```bash
 # View all login-related events
 jq 'select(.eventid | startswith("cowrie.login"))' cowrie.json
 
@@ -116,5 +116,3 @@ jq '.username, .password' cowrie.json
 # Identify attacker source IP addresses
 jq '.src_ip' cowrie.json
 ```
-
-</details>

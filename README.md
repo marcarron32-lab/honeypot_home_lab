@@ -67,10 +67,10 @@ pip install -r requirements.txt
 
 # Start the honeypot
 twistd cowrie
-</details>
+</details> <!-- THIS CLOSES THE COLLAPSIBLE BLOCK -->
 
-💡 Tip: Verify honeypot is running on port 2222: netstat -tulnp | grep 2222 or ss -tulnp | grep 2222
-
+💡 Tip: Verify honeypot is running on port 2222:
+netstat -tulnp | grep 2222 or ss -tulnp | grep 2222
 ---
 ## 🔍 Attack Simulation
 

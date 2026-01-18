@@ -44,7 +44,6 @@ Strengthen foundational **SOC skills** including monitoring, logging, and attack
 </div>
 
 ---
-
 ## 🏗️ Lab Setup
 
 <details>
@@ -64,6 +63,4 @@ pip install -r requirements.txt
 # Start the honeypot
 twistd cowrie
 
-<\details>
-
----
+</details>

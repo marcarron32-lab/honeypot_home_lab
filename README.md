@@ -117,4 +117,5 @@ jq '.username, .password' cowrie.json
 jq '.src_ip' cowrie.json
 ```
 This analysis mimics Tier 1 SOC tasks, where analysts triage authentication events and identify suspicious behavior.
+
 ---

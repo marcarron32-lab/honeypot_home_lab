@@ -98,8 +98,11 @@ cowrie/var/log/cowrie/cowrie.json
 The logs were analyzed using `jq` to extract meaningful security events such as login attempts, credentials used, source IP addresses, and executed commands.
 
 ### Example Log Analysis Commands
-
+<details>
+<summary>💻 Click to expand: Commands to view logs in Cowrie</summary>
 ```bash
+# Change Directory to this
+
 # View all login-related events
 jq 'select(.eventid | startswith("cowrie.login"))' cowrie.json
 
@@ -112,3 +115,4 @@ jq '.username, .password' cowrie.json
 # Identify attacker source IP addresses
 jq '.src_ip' cowrie.json
 ```
+</details>

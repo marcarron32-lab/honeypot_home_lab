@@ -74,6 +74,9 @@ twistd cowrie
 💡 Tip: Verify honeypot is running on port 2222:
 netstat -tulnp | grep 2222 or ss -tulnp | grep 2222
 
+![Cowrie Lab Setup Screenshots](screenshots)
+
+
 ---
 
 ## 🔍 Attack Simulation

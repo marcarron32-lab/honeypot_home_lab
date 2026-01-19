@@ -62,6 +62,7 @@ python3 -m venv cowrie-env
 source cowrie-env/bin/activate
 
 # Install required Python dependencies
+pip install --upgrade pip
 pip install -r requirements.txt
 
 # Start the honeypot

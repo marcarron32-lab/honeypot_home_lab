@@ -91,8 +91,11 @@ To simulate real-world attacker behavior, SSH connections were initiated from a 
 
 These actions allowed the honeypot to capture realistic attacker behavior without risking the host system.
 
-*Ref 1: Attacker SSH login attempt*  
-`![Attacker SSH Attempt](path-to-your-screenshot.png)`
+*Ref 1: Attacker SSH login attempt device 1*  
+![Attacker SSH Attempt](screenshots/attack_simulation)
+
+*Ref 2: Attacker SSH login attempt device 2*  
+![Attacker SSH Attempt](screenshots/attack_simulation2)
 
 ---
 

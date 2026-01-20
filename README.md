@@ -150,7 +150,7 @@ jq -r 'select(.eventid | test("login|command")) |
 
 This analysis mimics Tier 1 SOC tasks, where analysts triage authentication events and identify suspicious behavior.
 
-![Log Analysis Screenshots](screenshots/lab_setup)
+![Log Analysis Screenshots](screenshots/log_analysis)
 
 ---
 ## 📊 Results & Observations
@@ -173,8 +173,8 @@ The Cowrie honeypot successfully captured and recorded attacker activity, provid
 {
   "eventid": "cowrie.login.success",
   "username": "root",
-  "password": "123456",
-  "src_ip": "192.168.56.101",
+  "password": "*********",
+  "src_ip": "192.168.1.**",
   "timestamp": "2026-01-18T12:34:56"
 }
 ```

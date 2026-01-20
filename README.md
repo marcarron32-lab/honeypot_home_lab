@@ -113,17 +113,35 @@ The logs were analyzed using `jq` to extract meaningful security events such as 
 
 ### 📄 Example Log Analysis Commands
 ```bash
-# View all login-related events
-jq 'select(.eventid | startswith("cowrie.login"))' cowrie.json
+# View all login-related events (clean output)
+jq -r 'select(.eventid | startswith("cowrie.login"))' cowrie.json
 
-# Show only successful logins
-jq 'select(.eventid=="cowrie.login.success")' cowrie.json
+# Show only failed login attempts with details
+jq -r 'select(.eventid=="cowrie.login.failed") |
+"TIME: \(.timestamp) | IP: \(.src_ip) | USER: \(.username) | PASS: \(.password)"' cowrie.json
 
-# Extract attempted usernames and passwords
-jq '.username, .password' cowrie.json
+# Show only successful login attempts
+jq -r 'select(.eventid=="cowrie.login.success") |
+"TIME: \(.timestamp) | IP: \(.src_ip) | USER: \(.username)"' cowrie.json
 
-# Identify attacker source IP addresses
-jq '.src_ip' cowrie.json
+# Extract all attempted credentials
+jq -r 'select(.username != null) |
+"USERNAME: \(.username) | PASSWORD: \(.password)"' cowrie.json
+
+# List unique attacker IP addresses
+jq -r '.src_ip' cowrie.json | sort | uniq
+
+# Count number of events per attacker IP (basic attack volume)
+jq -r '.src_ip' cowrie.json | sort | uniq -c | sort -nr
+
+# Show commands executed by attackers
+jq -r 'select(.eventid=="cowrie.command.input") |
+"IP: \(.src_ip) | COMMAND: \(.input)"' cowrie.json
+
+# Build a simple attacker activity timeline
+jq -r 'select(.eventid | test("login|command")) |
+"TIME: \(.timestamp) | IP: \(.src_ip) | EVENT: \(.eventid) | DATA: \(.input // .username // "-")"' cowrie.json
+
 ```
 This analysis mimics Tier 1 SOC tasks, where analysts triage authentication events and identify suspicious behavior.
 

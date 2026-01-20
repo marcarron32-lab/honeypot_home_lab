@@ -112,8 +112,10 @@ cd cowrie/var/log/cowrie
 The logs were analyzed using `jq` to extract meaningful security events such as login attempts, credentials used, source IP addresses, and executed commands.
 
 ### 📄 Example Log Analysis Commands
+
 <details>
 <summary>💻 Click to expand: Commands to deploy Cowrie</summary>
+
 ```bash
 # View all login-related events (clean output)
 jq -r 'select(.eventid | startswith("cowrie.login"))' cowrie.json
@@ -145,6 +147,7 @@ jq -r 'select(.eventid | test("login|command")) |
 "TIME: \(.timestamp) | IP: \(.src_ip) | EVENT: \(.eventid) | DATA: \(.input // .username // "-")"' cowrie.json
 ```
 </details>
+
 This analysis mimics Tier 1 SOC tasks, where analysts triage authentication events and identify suspicious behavior.
 
 ---

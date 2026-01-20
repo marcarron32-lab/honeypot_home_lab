@@ -150,6 +150,8 @@ jq -r 'select(.eventid | test("login|command")) |
 
 This analysis mimics Tier 1 SOC tasks, where analysts triage authentication events and identify suspicious behavior.
 
+![Log Analysis Screenshots](screenshots/lab_setup)
+
 ---
 ## 📊 Results & Observations
 

@@ -54,20 +54,19 @@ Strengthen foundational **SOC skills** including monitoring, logging, and attack
 # Clone Cowrie repository
 git clone https://github.com/cowrie/cowrie.git
 
+# Change directory to the cowrie
+cd cowrie
+
 # Navigate to cowrie folder and create virtual environment
 python3 -m venv cowrie-env
 source cowrie-env/bin/activate
 
 # Install required Python dependencies
 pip install --upgrade pip
-pip install -r requirements.txt
-
-
-# Change directory to the cowrie
-cd cowrie
+pip install -e .
 
 # Start the honeypot
-twistd cowrie
+start cowrie
 ```
 </details>
 

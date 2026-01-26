@@ -48,7 +48,7 @@ Strengthen foundational **SOC skills** including monitoring, logging, and attack
 ## 🏗️ Lab Setup
 
 <details>
-<summary>💻 Click to expand: Commands to deploy Cowrie</summary>
+<summary>💻 Click to expand: Commands for retrieving logs</summary>
 
 ```bash
 # Clone Cowrie repository

@@ -48,7 +48,7 @@ Strengthen foundational **SOC skills** including monitoring, logging, and attack
 ## 🏗️ Lab Setup
 
 <details>
-<summary>💻 Click to expand: Commands for retrieving logs </summary>
+<summary>💻 Click to expand: Commands for deploying Cowrie </summary>
 
 ```bash
 # Clone Cowrie repository
@@ -113,7 +113,7 @@ The logs were analyzed using `jq` to extract meaningful security events such as 
 ### 📄 Example Log Analysis Commands
 
 <details>
-<summary>💻 Click to expand: Commands to deploy Cowrie</summary>
+<summary>💻 Click to expand: Commands for retrieving logs </summary>
 
 ```bash
 # View all login-related events (clean output)
